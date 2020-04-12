@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFD17DFB2442A2BC00184631 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD17DFA2442A2BC00184631 /* Service.swift */; };
 		FFD7E667244178620085D94C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E666244178620085D94C /* AppDelegate.swift */; };
 		FFD7E669244178620085D94C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E668244178620085D94C /* SceneDelegate.swift */; };
 		FFD7E66B244178620085D94C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E66A244178620085D94C /* ViewController.swift */; };
 		FFD7E66E244178620085D94C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD7E66C244178620085D94C /* Main.storyboard */; };
 		FFD7E6702441786A0085D94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD7E66F2441786A0085D94C /* Assets.xcassets */; };
 		FFD7E6732441786A0085D94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD7E6712441786A0085D94C /* LaunchScreen.storyboard */; };
+		FFD7E67F244283760085D94C /* AllCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E67E244283760085D94C /* AllCurrency.swift */; };
+		FFD7E682244298C20085D94C /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E681244298C20085D94C /* CurrencyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FFD17DFA2442A2BC00184631 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FFD7E663244178620085D94C /* ComprasExterior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasExterior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD7E666244178620085D94C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD7E668244178620085D94C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,9 @@
 		FFD7E66F2441786A0085D94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFD7E6722441786A0085D94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFD7E6742441786A0085D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD7E67A244178880085D94C /* ComprasExterior.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComprasExterior.entitlements; sourceTree = "<group>"; };
+		FFD7E67E244283760085D94C /* AllCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCurrency.swift; sourceTree = "<group>"; };
+		FFD7E681244298C20085D94C /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFD17DF92442A29F00184631 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FFD17DFA2442A2BC00184631 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		FFD7E65A244178620085D94C = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +71,51 @@
 		FFD7E665244178620085D94C /* ComprasExterior */ = {
 			isa = PBXGroup;
 			children = (
+				FFD7E67D244282F30085D94C /* Models */,
+				FFD7E67B244282D20085D94C /* Views */,
+				FFD7E680244298830085D94C /* ViewModels */,
+				FFD7E67C244282E10085D94C /* Controllers */,
+				FFD17DF92442A29F00184631 /* Service */,
+				FFD7E67A244178880085D94C /* ComprasExterior.entitlements */,
 				FFD7E666244178620085D94C /* AppDelegate.swift */,
 				FFD7E668244178620085D94C /* SceneDelegate.swift */,
-				FFD7E66A244178620085D94C /* ViewController.swift */,
-				FFD7E66C244178620085D94C /* Main.storyboard */,
 				FFD7E66F2441786A0085D94C /* Assets.xcassets */,
-				FFD7E6712441786A0085D94C /* LaunchScreen.storyboard */,
 				FFD7E6742441786A0085D94C /* Info.plist */,
 			);
 			path = ComprasExterior;
+			sourceTree = "<group>";
+		};
+		FFD7E67B244282D20085D94C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFD7E66C244178620085D94C /* Main.storyboard */,
+				FFD7E6712441786A0085D94C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FFD7E67C244282E10085D94C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD7E66A244178620085D94C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FFD7E67D244282F30085D94C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFD7E67E244283760085D94C /* AllCurrency.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FFD7E680244298830085D94C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFD7E681244298C20085D94C /* CurrencyViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD7E67F244283760085D94C /* AllCurrency.swift in Sources */,
+				FFD7E682244298C20085D94C /* CurrencyViewModel.swift in Sources */,
 				FFD7E66B244178620085D94C /* ViewController.swift in Sources */,
 				FFD7E667244178620085D94C /* AppDelegate.swift in Sources */,
 				FFD7E669244178620085D94C /* SceneDelegate.swift in Sources */,
+				FFD17DFB2442A2BC00184631 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ComprasExterior/ComprasExterior.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SM9KCJGMUP;
 				INFOPLIST_FILE = ComprasExterior/Info.plist;
@@ -293,8 +348,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dobigaster.ComprasExterior;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -302,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ComprasExterior/ComprasExterior.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SM9KCJGMUP;
 				INFOPLIST_FILE = ComprasExterior/Info.plist;
@@ -311,8 +368,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dobigaster.ComprasExterior;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

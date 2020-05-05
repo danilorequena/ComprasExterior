@@ -12,6 +12,12 @@ class ViewController: UIViewController {
 
     var currencysViewModel: CurrencyViewModel?
     var amt: Int = 0
+    lazy var  numberFormatter: NumberFormatter = {
+       let formatter = NumberFormatter()
+        formatter.currencySymbol = "$"
+        formatter.numberStyle = .currency
+        return formatter
+    }()
     
     //view currencys fixed
     @IBOutlet weak var viewCurrencys: UIView!
@@ -49,6 +55,8 @@ class ViewController: UIViewController {
         viewGBPtoBRL.isHidden = true
         
         fetchData()
+        
+        tfCurrencyOut.delegate = self
     }
     
     
@@ -107,6 +115,11 @@ class ViewController: UIViewController {
         lbResultGBP.text = resultGBP.currency
     }
     
+    func updateTextField() -> String {
+        let number = Double(amt/100) + Double(amt%100) / 100
+        return numberFormatter.string(from: NSNumber(value: number))!
+    }
+    
     
 }
 
@@ -139,5 +152,20 @@ extension Numeric {
     var currencyBR: String { Formatter.currencyBR.string(for: self) ?? "" }
     var currencyGB: String { Formatter.currencyGB.string(for: self) ?? "" }
     var currencyEU: String { Formatter.currencyEU.string(for: self) ?? "" }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let digit = Int(string) {
+            amt = amt * 10 + digit
+            tfCurrencyOut.text = updateTextField()
+        }
+        if string == "" {
+            amt = amt/10
+            
+            tfCurrencyOut.text = updateTextField()
+        }
+        return false
+    }
 }
 

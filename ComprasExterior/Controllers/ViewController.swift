@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CurrencyTextField
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class ViewController: UIViewController {
     var amt: Int = 0
     lazy var  numberFormatter: NumberFormatter = {
        let formatter = NumberFormatter()
-        formatter.currencySymbol = "$"
+        formatter.currencySymbol = ""
         formatter.numberStyle = .currency
         return formatter
     }()
@@ -26,7 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbPounds: UILabel!
     
     @IBOutlet weak var lbCurrencyOut: UILabel!
-    @IBOutlet weak var tfCurrencyOut: UITextField!
+//    @IBOutlet weak var tfCurrencyOut: CurrencyTextField!
+    @IBOutlet weak var tfCurrency: UITextField!
     @IBOutlet weak var lbCurrencyIn: UILabel!
     @IBOutlet weak var lbUSD: UILabel!
     @IBOutlet weak var lbEUR: UILabel!
@@ -44,7 +46,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
         lbResultUSD.text = " "
         lbResultEUR.text = " "
@@ -56,16 +57,13 @@ class ViewController: UIViewController {
         
         fetchData()
         
-        tfCurrencyOut.delegate = self
+        tfCurrency.delegate = self
     }
     
     
 
     @IBAction func Calculate(_ sender: UIButton) {
         calculate()
-    }
-    @IBAction func ChangeCurrency(_ sender: UIButton) {
-        self.ivFlagOut.image = UIImage(named: "euro")
     }
     
     func setupViews() {
@@ -102,22 +100,22 @@ class ViewController: UIViewController {
         let doubleValueUSD: Double = Double(currencysViewModel!.currency.usd.ask) ?? 0.0
         let doubleValueEUR: Double = Double(currencysViewModel!.currency.eur.ask) ?? 0.0
         let doubleValueGBP: Double = Double(currencysViewModel!.currency.gbp.ask) ?? 0.0
-        guard let amount = Double(self.tfCurrencyOut.text!) else {return}
+        guard let amount = Double(self.tfCurrency.text!) else {return}
         let resultUSD = amount * doubleValueUSD * iof
         let resultEUR = amount * doubleValueEUR * iof
         let resultGBP = amount * doubleValueGBP * iof
         Formatter.currency.locale = .br
-        lbUSD.text = "$" + tfCurrencyOut.text!
-        lbEUR.text = "€" + tfCurrencyOut.text!
-        lbGBP.text = "£" + tfCurrencyOut.text!
+        lbUSD.text = "$" + tfCurrency.text!
+        lbEUR.text = "€" + tfCurrency.text!
+        lbGBP.text = "£" + tfCurrency.text!
         lbResultUSD.text = resultUSD.currency
         lbResultEUR.text = resultEUR.currency
         lbResultGBP.text = resultGBP.currency
     }
     
-    func updateTextField() -> String {
+    func updateTextField() -> Double {
         let number = Double(amt/100) + Double(amt%100) / 100
-        return numberFormatter.string(from: NSNumber(value: number))!
+        return number
     }
     
     
@@ -158,12 +156,12 @@ extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let digit = Int(string) {
             amt = amt * 10 + digit
-            tfCurrencyOut.text = updateTextField()
+            tfCurrency.text = String(updateTextField())
         }
         if string == "" {
             amt = amt/10
-            
-            tfCurrencyOut.text = updateTextField()
+
+            tfCurrency.text = String(updateTextField())
         }
         return false
     }

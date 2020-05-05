@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7B00C661571F45242E5FE47 /* Pods_ComprasExterior.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19C3B0DC9F042782B71FBEE /* Pods_ComprasExterior.framework */; };
 		FFD17DFB2442A2BC00184631 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD17DFA2442A2BC00184631 /* Service.swift */; };
 		FFD7E667244178620085D94C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E666244178620085D94C /* AppDelegate.swift */; };
 		FFD7E669244178620085D94C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7E668244178620085D94C /* SceneDelegate.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		580C91C04450CB72B824F10D /* Pods-ComprasExterior.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComprasExterior.debug.xcconfig"; path = "Target Support Files/Pods-ComprasExterior/Pods-ComprasExterior.debug.xcconfig"; sourceTree = "<group>"; };
+		E19C3B0DC9F042782B71FBEE /* Pods_ComprasExterior.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComprasExterior.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E96D64FDB70E9CF09CDB63 /* Pods-ComprasExterior.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComprasExterior.release.xcconfig"; path = "Target Support Files/Pods-ComprasExterior/Pods-ComprasExterior.release.xcconfig"; sourceTree = "<group>"; };
 		FFD17DFA2442A2BC00184631 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FFD7E663244178620085D94C /* ComprasExterior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasExterior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD7E666244178620085D94C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,12 +42,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B00C661571F45242E5FE47 /* Pods_ComprasExterior.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6767F8C37B5C9A3C00487F4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				580C91C04450CB72B824F10D /* Pods-ComprasExterior.debug.xcconfig */,
+				F3E96D64FDB70E9CF09CDB63 /* Pods-ComprasExterior.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BFF8D4A35014FF58D5438124 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E19C3B0DC9F042782B71FBEE /* Pods_ComprasExterior.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FFD17DF92442A29F00184631 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +80,8 @@
 			children = (
 				FFD7E665244178620085D94C /* ComprasExterior */,
 				FFD7E664244178620085D94C /* Products */,
+				6767F8C37B5C9A3C00487F4A /* Pods */,
+				BFF8D4A35014FF58D5438124 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFD7E6772441786A0085D94C /* Build configuration list for PBXNativeTarget "ComprasExterior" */;
 			buildPhases = (
+				8CE1633A2887F67E4B14A53D /* [CP] Check Pods Manifest.lock */,
 				FFD7E65F244178620085D94C /* Sources */,
 				FFD7E660244178620085D94C /* Frameworks */,
 				FFD7E661244178620085D94C /* Resources */,
+				EA3B9B788F5F01323AE8881F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CE1633A2887F67E4B14A53D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ComprasExterior-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA3B9B788F5F01323AE8881F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ComprasExterior/Pods-ComprasExterior-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ComprasExterior/Pods-ComprasExterior-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ComprasExterior/Pods-ComprasExterior-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFD7E65F244178620085D94C /* Sources */ = {
@@ -336,6 +405,7 @@
 		};
 		FFD7E6782441786A0085D94C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 580C91C04450CB72B824F10D /* Pods-ComprasExterior.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ComprasExterior/ComprasExterior.entitlements;
@@ -356,6 +426,7 @@
 		};
 		FFD7E6792441786A0085D94C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E96D64FDB70E9CF09CDB63 /* Pods-ComprasExterior.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ComprasExterior/ComprasExterior.entitlements;

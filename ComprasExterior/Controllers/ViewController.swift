@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CurrencyTextField
 
 class ViewController: UIViewController {
 
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbPounds: UILabel!
     
     @IBOutlet weak var lbCurrencyOut: UILabel!
-//    @IBOutlet weak var tfCurrencyOut: CurrencyTextField!
     @IBOutlet weak var tfCurrency: UITextField!
     @IBOutlet weak var lbCurrencyIn: UILabel!
     @IBOutlet weak var lbUSD: UILabel!

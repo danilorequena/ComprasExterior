@@ -7,6 +7,4 @@ target 'ComprasExterior' do
 
   # Pods for ComprasExterior
 
-       pod 'CurrencyTextField'
-
 end

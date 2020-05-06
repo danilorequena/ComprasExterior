@@ -1,16 +1,3 @@
-PODS:
-  - CurrencyTextField (2.3)
-
-DEPENDENCIES:
-  - CurrencyTextField
-
-SPEC REPOS:
-  trunk:
-    - CurrencyTextField
-
-SPEC CHECKSUMS:
-  CurrencyTextField: 75d8ee80cf245925684b34c9a49ba886f258e2dc
-
-PODFILE CHECKSUM: 9c6bcd977fc3b7314741bcbd8d668d860448a911
+PODFILE CHECKSUM: 854416bd9e4da44094daa9217f6d8637943df0eb
 
 COCOAPODS: 1.9.1
